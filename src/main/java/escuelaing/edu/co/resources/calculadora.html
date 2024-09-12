@@ -6,10 +6,10 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
-        <h1>Form with GET</h1>
+        <h1>Calculadora</h1>
         <form action="/hello">
-            <label for="name">Name:</label><br>
-            <input type="text" id="name" name="name" value="John"><br><br>
+            <label for="name">Ingrese la operacion</label><br>
+            <input type="text" id="comando" name="comando" value="add(a,b)"><br><br>
             <input type="button" value="Submit" onclick="loadGetMsg()">
         </form> 
         <div id="getrespmsg"></div>
@@ -22,7 +22,7 @@
                     document.getElementById("getrespmsg").innerHTML =
                     this.responseText;
                 }
-                xhttp.open("GET", "/hello?name="+nameVar);
+                xhttp.open("GET", "/computar/?comando="+nameVar);
                 xhttp.send();
             }
         </script>
@@ -31,7 +31,7 @@
         <form action="/hellopost">
             <label for="postname">Name:</label><br>
             <input type="text" id="postname" name="name" value="John"><br><br>
-            <input type="button" value="Submit" onclick="loadPostMsg(postname)">
+            <input type="button" value="Submit" onclick="loadPostMsg(postname)" for="postname">
         </form>
         
         <div id="postrespmsg"></div>

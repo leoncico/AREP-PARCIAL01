@@ -11,8 +11,7 @@ public class HttpConnection {
     private static final String USER_AGENT = "Mozilla/5.0";
     private static final String GET_URL = "https://localhost:36000/";
 
-    public static void main(String[] args) throws IOException {
-
+    public static void response() throws IOException {
         URL obj = new URL(GET_URL);
         HttpURLConnection con = (HttpURLConnection) obj.openConnection();
         con.setRequestMethod("GET");
