@@ -55,15 +55,14 @@ public class WebServerFront {
               "    <body>\r\n" + //
               "        <h1>Calculadora</h1>\r\n" + //
               "        <form action=\"/hello\">\r\n" + //
-              "            <label for=\"name\">Ingrese la operacion</label><br>\r\n" + //
-              "            <input type=\"text\" id=\"comando\" name=\"comando\" value=\"add(a,b)\"><br><br>\r\n" + //
-              "            <input type=\"button\" value=\"Submit\" onclick=\"loadGetMsg()\">\r\n" + //
+              "            <label for=\"name\">Ingrese la operacion y presione Enter</label><br>\r\n" + //
+              "            <input type=\"text\" id=\"comando\" name=\"comando\" value=\"add(a,b)\" onsubmit=\"loadGetMsg()\"><br><br>\r\n" + //
               "        </form> \r\n" + //
               "        <div id=\"getrespmsg\"></div>\r\n" + //
               "\r\n" + //
               "        <script>\r\n" + //
               "            function loadGetMsg() {\r\n" + //
-              "                let nameVar = document.getElementById(\"name\").value;\r\n" + //
+              "                let nameVar = document.getElementById(\"comando\").value;\r\n" + //
               "                const xhttp = new XMLHttpRequest();\r\n" + //
               "                xhttp.onload = function() {\r\n" + //
               "                    document.getElementById(\"getrespmsg\").innerHTML =\r\n" + //

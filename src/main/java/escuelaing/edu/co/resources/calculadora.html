@@ -8,15 +8,14 @@
     <body>
         <h1>Calculadora</h1>
         <form action="/hello">
-            <label for="name">Ingrese la operacion</label><br>
-            <input type="text" id="comando" name="comando" value="add(a,b)"><br><br>
-            <input type="button" value="Submit" onclick="loadGetMsg()">
+            <label for="name">Ingrese la operacion y presione Enter</label><br>
+            <input type="text" id="comando" name="comando" value="add(a,b)" onsubmit="loadGetMsg()"><br><br>
         </form> 
         <div id="getrespmsg"></div>
 
         <script>
             function loadGetMsg() {
-                let nameVar = document.getElementById("name").value;
+                let nameVar = document.getElementById("comando").value;
                 const xhttp = new XMLHttpRequest();
                 xhttp.onload = function() {
                     document.getElementById("getrespmsg").innerHTML =
